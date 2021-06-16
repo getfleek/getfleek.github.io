@@ -7,7 +7,6 @@ server {
     error_log  /var/log/nginx/error.log;
     access_log /var/log/nginx/access.log;
 
-    location /static/ {
-        root /home/ubuntu/getfleek.github.io/;
-    }
+    root /home/ubuntu/getfleek.github.io;
+    index index.html;
 }
