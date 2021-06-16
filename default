@@ -8,6 +8,6 @@ server {
     access_log /var/log/nginx/access.log;
 
     location /static/ {
-        root /var/www/fleek/;
+        root /home/ubuntu/getfleek.github.io/;
     }
 }
