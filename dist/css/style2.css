@@ -1,0 +1,242 @@
+@font-face {
+	font-family: "LightFont";
+	src: url("../../assets/fonts/Gilroy-Light.otf") format("otf");
+	src: url("../../assets/fonts/Gilroy-Light.woff") format("woff");
+	font-weight: 300;
+}
+
+@font-face {
+	font-family: "BoldFont";
+	src: url("../../assets/fonts/Gilroy-Bold.woff") format("woff");
+	font-weight: bold;
+}
+
+@font-face {
+	font-family: "MediumFont";
+	src: url("../../assets/fonts/Gilroy-Medium.woff") format("woff");
+	font-weight: 300;
+}
+
+
+* {
+  font-family: "MediumFont", sans-serif;
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0%;
+}
+body {
+  background-color: #1a1a1a;
+	font-family: "MediumFont";
+}
+.container1{
+  width: 100%;
+  height: auto;
+}
+.container{
+flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+	font-family: "MediumFont";
+
+}
+.container h1{
+    color:#019c85;
+	font-family: "MediumFont";
+    font-size:40px;
+    margin-bottom: -0.1em;
+}
+.container p{
+	font-family: "MediumFont";
+font-size: 40px;
+    color: white;
+}
+.container img{
+    height: 14em;
+    margin: 1.5em;
+}
+.container span{
+    color: #019c85;
+    font-size:30px;
+	font-family: "MediumFont";
+
+}
+.form-element{
+    width: 300px;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    /* border: 1px solid red; */
+    justify-content: center;
+}
+
+.form-element button::before {
+  content: "";
+  width: 1.7em;
+  height: 1.7em;
+  border-radius: 50%;
+  background-color: white;
+  z-index: 2;
+  position: absolute;
+  top: 0%;
+  left: 82%;
+}
+/* .form-element button:hover::before {
+  content: "";
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  background-color: white;
+  z-index: 2;
+  position: absolute;
+  top: 0%;
+  right: 0%; */
+  /* animation: pos 3s ease-in-out; */
+/* } */
+/* @keyframes pos{
+  0%{
+      left: 0%;
+  } */
+  /* 90%{
+  left: 90;
+} */
+/* 50%{
+  left: 85%;
+}
+  95%{
+      left: 85%;
+  } 
+  100%{
+      left: 85%;
+  } 
+} */
+
+
+.form-element button {
+  width: 90%;
+	font-family: "MediumFont";
+  font-size:29px;
+  text-align: center;
+  background: #019c85;
+  border: 1px solid #019c85;
+  border-radius: 50px;
+  color: white;
+  cursor: pointer;
+  padding: 7px 25px 7px 0;
+  position: relative;
+  margin: 0.8em 0 1em 0;
+}
+
+@media (max-width:576px) {
+  .container1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+  }
+    .container{
+      position: absolute;
+      top: -60px;
+        flex-direction: column;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          font-family: "MediumFont";
+        }
+        .container h1{
+          color:#019c85;
+          font-family: "MediumFont";
+            font-size:29px;
+            margin: 1em 0 .1em;
+        }
+        .container p{
+            color: white;
+            font-size:22px;
+        }
+        .container img{
+            height: 8em;
+            margin: 2.5em 0 2.5em;
+        }
+        .container span{
+            color: #019c85;
+            font-size:20px;
+        }
+        .form-element{
+            width: 200px;
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .form-element button {
+          width: 210%;
+          font-family: "MediumFont";
+          font-size:22px;
+          text-align: center;
+          background: #019c85;
+          border: 1px solid #019c85;
+          border-radius: 50px;
+          color: white;
+          cursor: pointer;
+          padding: 7px 25px 7px 0;
+          position: relative;
+          margin: 0.8em 0 1em 0;
+        }
+        
+        .form-element button::before {
+          content: "";
+          width: 1.9em;
+          height: 1.9em;
+          border-radius: 50%;
+          background-color: white;
+          z-index: 2;
+          position: absolute;
+            top: -1%;
+          left: 79.8%;
+          /* left: 75%; */
+        }  
+        
+             
+}
+
+@media  (min-width:576px) and (max-width:1086px)  {
+  .form-element{
+    font-family: "MediumFont";
+    width: 250px;
+    /* border: 2px solid red; */
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form-element button{
+  width: 100%;
+  font-family: "MediumFont";
+  text-align:center;
+  background: #019c85;
+  font-size:29px;
+  border:1px solid #03483e;
+  border-radius: 50px;
+  color: white;
+  cursor: pointer;
+  padding: 7px 35px 7px 0;
+  position: relative;
+  margin: .8em  0 1em  0;
+}
+.form-element button::before {
+  content: "";
+  width: 1.7em;
+  height: 1.7em;
+  border-radius: 50%;
+  background-color: white;
+  z-index: 2;
+  position: absolute;
+  top: 0%;
+  left: 81%;
+}
+
+}

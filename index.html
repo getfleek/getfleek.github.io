@@ -2,6 +2,24 @@
 <html lang="en">
 
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-192871813-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-192871813-1');
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-192871813-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-192871813-1');
+    </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +27,9 @@
     <title>Fleek: Track and manage all your subscriptions</title>
     <link rel="icon" href="./assets/favicon.png">
     <link rel="stylesheet" href="./dist/css/style.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
@@ -31,8 +52,8 @@
                         <li class="navbar-item"><a class="navbar-link" href="/about.html#team">Our Team</a></li>
                         <li class="navbar-item"><a class="navbar-link" href="#footer">Contact</a></li>
                         <!-- <li class="navbar-item"><a class="navbar-link" href="#">FAQ</a></li> -->
-                        <li class="navbar-item joinBtn"><a target="_blank" class="navbar-link"
-                                href="https://mkf98e8aosb.typeform.com/to/usRA566p">join the
+                        <li class="navbar-item joinBtn"><a target="_blank" class="navbar-link blured13 submit1234">
+                                join the
                                 waitlist</a></li>
                         <li class="nav-icons">
                             <a class="social-link" target="_blank"
@@ -63,9 +84,9 @@
                         <li class="navbar-item"><a class="navbar-link" href="/about.html#team">Our Team</a></li>
                         <li class="navbar-item"><a class="navbar-link" href="#footer">Contact</a></li>
                         <!-- <li class="navbar-item"><a class="navbar-link" href="#">FAQ</a></li> -->
-                        <li class="navbar-item joinBtn"><a target="_blank" class="navbar-link"
-                                href="https://mkf98e8aosb.typeform.com/to/usRA566p">join the
-                                waitlist</a></li>
+                        <li class="navbar-item joinBtn"><a target="_blank"
+                                class="navbar-link submit submit1 blured1 ">join the waitlist</a></li>
+                        <!-- href="https://mkf98e8aosb.typeform.com/to/usRA566p" -->
                         <li class="nav-icons">
                             <a class="social-link" target="_blank"
                                 href="https://www.linkedin.com/company/getfleekapp"><img src="./assets/linkedIn.png"
@@ -82,27 +103,53 @@
             </nav>
         </header>
 
-
-
         <div class="heroSection">
+            <div class="popup">
+                <div class="crosbtn"><i class="fas fa-times"></i></div>
+                <div class="form">
+                    <form id="popform" action="./congo.html">
+                        <h2>#GetYourFleekOn</h2>
+                        <img class="elem1" data-aos-duration="50" src="./assets/WEBVIEW_WAITLIST_IMAGE2.png">
+                        <img class="elem2" data-aos-duration="50" src="./assets/MOBILE_WAITLIST_IMAGE.png">
+
+                        <div class="form-element">
+                            <!-- <label for="Name">Name</label> -->
+                            <input name="name" id="name-input" type="text" placeholder="Name" required>
+                        </div>
+                        <div class="form-element">
+                            <!-- <label for="Name">E-Mail</label> -->
+                            <input name="email" id="email-input" type="email" placeholder="E-mail" required>
+                        </div>
+                        <div class="form-element">
+                            <!-- <label for="Name">Phone Number</label> -->
+                            <input name="telephone" id="tel-input" type="tel" pattern="^\d{10}$"
+                                placeholder="Phone Number">
+                        </div>
+                        <div class="form-element">
+                            <button type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="blur"></div>
+
             <div class="heroText">
                 <h2>manage your subscriptions <br> with
                     just a <span class="toggle">toggle.</span> </h2>
                 <p>join the waitlist for early access </p>
             </div>
-
+            <!-- <a target="_blank" href="https://mkf98e8aosb.typeform.com/to/usRA566p"></a> -->
             <div class="joinBtn2">
-                <a target="_blank" href="https://mkf98e8aosb.typeform.com/to/usRA566p"><button class="">join
-                        the
-                        waitlist</button></a>
+                <button class="submit12 blured">join the waitlist</button>
             </div>
 
             <button class="downBtn"><i class="fas fa-chevron-down"></i></a></button>
             <!-- <button class="downBtn"><a href="#secondPage"></a><i class="fas fa-chevron-down"></i></a></button> -->
         </div>
         <div class="buttons">
-            <a target="_blank" href="https://mkf98e8aosb.typeform.com/to/usRA566p"><button class="firstBtn ">join the
+            <a target="_blank"><button class="firstBtn  blured2 submit123">join the
                     waitlist</button></a>
+            <!-- href="https://mkf98e8aosb.typeform.com/to/usRA566p" -->
         </div>
 
 
@@ -271,7 +318,7 @@
         </div>
         <div class="tc box">
             <h2><a href="/Fleek-PrivacyPolicy.html">Privacy Policy</a></h2>
-            <h2><a href="/tnc">Terms and Condition</a></h2>
+            <h2><a href="/terms.html">Terms & Conditions</a></h2>
         </div>
         <img class="vector1" src="./assets/Vector.svg">
         <img class="vector3" src="./assets/Vector3.svg">
@@ -313,6 +360,13 @@
         <img class="e10" src="./assets/e10.svg">
         <img class="e11" src="./assets/e11.svg">
     </div>
+    <script>
+        function submitTwice(f) {
+            f.action = 'http://mydomain.com/threevideopage.php';
+            f.target = '_self';
+            f.submit();
+        }
+    </script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./script.js"></script>
     <script>
@@ -353,6 +407,49 @@
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
+        let blur = document.getElementsByClassName("blur");
+
+        document.querySelector(".submit1").addEventListener("click", function () {
+            document.querySelector(".popup").classList.add("active")
+        });
+
+        document.querySelector(".blured1").addEventListener("click", function () {
+            document.querySelector(".blur").classList.add("active2")
+        });
+
+        document.querySelector(".submit1234").addEventListener("click", function () {
+            document.querySelector(".popup").classList.add("active")
+        });
+
+        document.querySelector(".blured13").addEventListener("click", function () {
+            document.querySelector(".blur").classList.add("active2")
+        });
+
+        document.querySelector(".blured").addEventListener("click", function () {
+            document.querySelector(".blur").classList.add("active2")
+        });
+
+        document.querySelector(".blured2").addEventListener("click", function () {
+            document.querySelector(".blur").classList.add("active2")
+        });
+
+        document.querySelector(".submit123").addEventListener("click", function () {
+            document.querySelector(".popup").classList.add("active")
+        });
+
+        document.querySelector(".crosbtn").addEventListener("click", function () {
+            document.querySelector(".blur").classList.remove("active2")
+        });
+
+
+        document.querySelector(".submit12").addEventListener("click", function () {
+            document.querySelector(".popup").classList.add("active")
+        });
+        document.querySelector(".popup .crosbtn").addEventListener("click", function () {
+            document.querySelector(".popup").classList.remove("active")
+        });
+
+
         $(document).ready(function () {
             $(".footerNav").height(`${$(".footer .left img").height()}px`)
         })
@@ -378,6 +475,44 @@
             lastScrollTop = st;
 
         });
+    </script>
+
+    <script>
+        const form = document.querySelector('#popform')
+        if (form) {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault()
+                const nameInput = document.querySelector('#name-input').value
+                const emailInput = document.querySelector('#email-input').value
+                const telInput = document.querySelector('#tel-input').value
+                const data = {
+                    name: nameInput,
+                    email: emailInput,
+                    phonenumber: telInput
+                }
+                console.log(JSON.stringify(data))
+                const api = 'https://api-dev.getfleek.app/join/add-user/'
+                fetch(api, {
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json',
+                    },
+                    method: "POST",
+                    body: JSON.stringify(data)
+                })
+                    .then((res) => {res.json(); console.log(res)})
+                    .then((d) => {
+                        console.log(d)
+                        console.log(data)
+                        window.open(`/congo.html?email=${data.email}`, '_self')
+                    })
+                    .catch((e) => {
+                        console.log(e)
+                        console.log(data)
+                        window.open(`/congo.html?email=${data.email}`, '_self')
+                    })
+            })
+        }
     </script>
 </body>
 
