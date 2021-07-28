@@ -373,6 +373,10 @@ a {
   font: weight 0;
 }
 
+.gridlast1 {
+  margin-top: 1.5em;
+}
+
 
 .gridlast1 {
   padding: 0 3em 0 0;
@@ -380,7 +384,7 @@ a {
   height: auto;
   width: 100%;
   display: grid;
-  grid-template-columns: auto auto ;
+  grid-template-columns: 290px 290px ;
 }
 
 .option7:hover {
