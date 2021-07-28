@@ -97,7 +97,8 @@
 
         </section>
         <section id="seventh">
-            <label for="name">3<i class="fas fa-arrow-right"></i>Which of these payment methods do you use to pay for your
+            <label for="name">3<i class="fas fa-arrow-right"></i>Which of these payment methods do you use to pay for
+                your
                 subscriptions? *</label>
             <p>Choose as many as you like</p>
             <div class="option5 " data-value="I purchase my subscriptions through Play Store/App Store">
@@ -148,11 +149,11 @@
         <section id="nine">
             <label for="name">5<i class="fas fa-arrow-right"></i>Which mobile phone OS do you use?</label>
             <!-- <p>Choose as many as you like</p> -->
-            <div class="gridlast1 subscription-nos">
-                <div class="option7" data-value="0-5">
+            <div class="gridlast1 subscription-os">
+                <div class="option7" data-value="Android">
                     <span class="option">A</span>Android
                 </div>
-                <div class="option7" data-value="6-8">
+                <div class="option7" data-value="IOS">
                     <span class="option">B</span>IOS
                 </div>
             </div>
@@ -170,7 +171,7 @@
 
 
     <!-- {% comment %}  -->
-    <script src="./index.js"></script> 
+    <script src="./index.js"></script>
     <!-- {% endcomment %} -->
 
 
@@ -197,16 +198,21 @@
                 // get no of subscriptions value
                 let subscriptionNos = document.querySelector('.subscription-nos > .active')
 
+                // os
+                let subscriptionOS = document.querySelector('.subscription-os > .active')
+
+
                 // get email from page query
                 var urlParams = new URLSearchParams(window.location.search)
                 const emailQuery = urlParams.get('email')
-                
+
                 const data = {
                     email: emailQuery,
                     subscriptions: subscriptions,
                     frequentSubscription: frequentSubscription,
                     paymentmethods: paymentMethods,
-                    SubscriptionNumbers: subscriptionNos ? subscriptionNos.dataset.value : subscriptionNos
+                    SubscriptionNumbers: subscriptionNos ? subscriptionNos.dataset.value : subscriptionNos,
+                    SubscriptionOStype: subscriptionOS ? subscriptionOS.dataset.value : subscriptionOS
                 }
                 const api = 'http://localhost:8000/add-response/'
                 console.log('request is one')
@@ -232,9 +238,9 @@
                         window.location.href = "./thanks.html"
 
 
-                        setInterval(() => {
-                            window.location.href = "/thanks.html"
-                        }, 1500000)
+                        // setInterval(() => {
+                        //     window.location.href = "/thanks.html"
+                        // }, 1500000)
                     })
             })
 
