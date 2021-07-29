@@ -29,7 +29,7 @@ html {
   overflow-x: hidden;
 }
 ::-webkit-scrollbar {
-  width: 0px;
+  width: 0;
 }
 * {
   background: #242425;
@@ -373,6 +373,37 @@ a {
   font: weight 0;
 }
 
+.gridlast1 {
+  margin-top: 1.5em;
+}
+
+
+.gridlast1 {
+  padding: 0 3em 0 0;
+  margin-bottom: 1em;
+  height: auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 290px 290px ;
+}
+
+.option7:hover {
+  cursor: pointer;
+}
+
+.option7 {
+  border-radius: 5px;
+  width: 80%;
+  margin: 0.5em;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-right: 1em;
+  border: 2px solid rgba(255, 255, 255, 0.721);
+  font-size: 1em;
+  margin-bottom: 1em;
+}
+
 @media only screen and (max-width: 600px) {
   .container {
     width: 100%;
@@ -406,6 +437,8 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    font-family: "Gilroy-Medium", sans-serif;
+
     align-items: flex-start;
     height: 100vh;
     font-size: 0.8em;
@@ -421,6 +454,8 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    font-family: "Gilroy-Medium", sans-serif;
+
     height: 100vh;
     width: 400px;
     padding: 0 4em 0 6em;
@@ -434,6 +469,7 @@ a {
     align-items: flex-start;
     height: 100vh;
     width: 400px;
+    font-family: "Gilroy-Medium", sans-serif;
     padding: 0 4em 0 6em;
     font-size: 0.8em;
     /* font-family: "Gilroy-Medium", sans-serif; */
@@ -444,10 +480,12 @@ a {
     align-items: flex-start;
     flex-direction: column;
     justify-content: center;
+    font-family: "Gilroy-Medium", sans-serif;
+
     /* text-align:justify; */
     height: 100vh;
-    padding: 0 4em 0 5em;
-    font-size: 0.7em;
+    padding: 0 4em 0 6em;
+    font-size: 0.8em;
   }
   .thanksbtns {
     /* border: 1px solid red; */
@@ -470,7 +508,7 @@ a {
     /* border: 2px solid red; */
     height: 5em;
     position: relative;
-    margin-bottom: 0em;
+    margin-bottom: 0;
   }
   #thankslogo {
     position: absolute;
@@ -526,7 +564,7 @@ a {
   .option {
     border: 2px solid rgba(255, 255, 255, 0.721);
     padding: 0.2em 0.5em;
-    margin: 0.5em;
+    margin: 0.5em 2em 0.5em .5em;
     font-size: 0.9em;
   }
 
@@ -574,10 +612,36 @@ a {
     /* border: 2px solid rgba(255, 255, 255, 0.721); */
     align-items: flex-start;
     font-family: "Gilroy-Medium", sans-serif;
-    padding: 0 2em 0em 6em;
+    padding: 0 2em 0 6em;
+    font-size: 0.8em;
+  }
+  
+  .container section:nth-child(9) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 400px;
+    height: 100vh;
+    /* border: 2px solid rgba(255, 255, 255, 0.721); */
+    align-items: flex-start;
+    font-family: "Gilroy-Medium", sans-serif;
+    padding: 0 2em 0 6em;
     font-size: 0.8em;
   }
   .option6 {
+    border-radius: 5px;
+    width: 90%;
+    margin: 1em 0.4em 0.4em 0.4em;
+    display: flex;
+    font-weight: 0;
+    justify-content: flex-start;
+    align-items: center;
+    padding-right: 0.5em;
+    border: 2px solid rgba(255, 255, 255, 0.721);
+    font-size: 0.7em;
+    margin-bottom: 0.5em;
+  }
+  .option7 {
     border-radius: 5px;
     width: 90%;
     margin: 1em 0.4em 0.4em 0.4em;
@@ -599,6 +663,17 @@ a {
     display: grid;
     grid-template-columns: auto;
   }
+
+  .gridlast1 {
+    padding: 0 3em 0 0;
+    margin-top: 1.1em;
+    margin-bottom: 1em;
+    height: auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto;
+  }
+
 
   span:hover {
     background: rgba(255, 255, 255, 0.2);
@@ -776,7 +851,26 @@ a {
     display: grid;
     grid-template-columns: auto;
   }
-
+  .option7 {
+    border-radius: 5px;
+    width: 80%;
+    margin: 0.5em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-right: 0.5em;
+    border: 2px solid rgba(255, 255, 255, 0.721);
+    font-size: 0.8em;
+    margin-bottom: 0.5em;
+  }
+  .gridlast1 {
+    padding: 0 3em 0 0;
+    margin-bottom: 1em;
+    height: auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto;
+  }
   span:hover {
     background: rgba(255, 255, 255, 0.2);
   }
