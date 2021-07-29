@@ -649,7 +649,8 @@ header {
   width: 25px;
   height: 4px;
   margin: 2px;
-  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out,
+ opacity 0.2s ease-in-out;
   background-color: var(--navbar-text-color);
 }
 
@@ -687,7 +688,8 @@ header {
   top: var(--navbar-height);
   height: 90vh;
   bottom: 0;
-  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, left 0.2s ease-in-out, right 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out,
+ left 0.2s ease-in-out, right 0.2s ease-in-out;
   opacity: 0;
   visibility: hidden;
 }
@@ -854,7 +856,7 @@ header {
     margin: 0% 10%;
   }
   #navbar {
-    padding-top: 0rem;
+    padding-top: 0;
     height: auto;
   }
   #navbar .navbar-menu {
@@ -930,7 +932,7 @@ header {
     width: 100%;
   }
   .footer .left .footer-icons {
-    margin-top: 0rem;
+    margin-top: 0;
   }
   .footer .left .footer-icons a {
     margin-right: 1rem;
