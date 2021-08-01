@@ -1,59 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-192871813-1"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || []
-      function gtag() {
-        dataLayer.push(arguments)
-      }
-      gtag('js', new Date())
 
-      gtag('config', 'UA-192871813-1')
-    </script>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="./assets/favicon.png">
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-192871813-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || []
+    function gtag() {
+      dataLayer.push(arguments)
+    }
+    gtag('js', new Date())
 
-    <title>congo</title>
-    <link rel="stylesheet" href="./dist/css/style2.css" />
-  </head>
+    gtag('config', 'UA-192871813-1')
+  </script>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="./assets/favicon.png">
 
-  <body>
-    <div class="container1">
-      <form id="survey-form" class="container">
-        <h1>Congratulations!</h1>
-        <p>You're now on the waitlist</p>
-        <img
-          class="badge"
-          src="./assets/new badge.png"
-          srcset="./assets/new badge.webp"
-          alt="badge here"
-        />
-        <span>To get early access,</span>
-        <span>Participate in this small survey.</span>
-        <div class="form-element">
-          <button type="submit">Start Survey</button>
-        </div>
-      </form>
-    </div>
+  <title>congo</title>
+  <link rel="stylesheet" href="./dist/css/style2.css" />
+</head>
 
-    <script>
-      var urlParams = new URLSearchParams(window.location.search)
-      const emailQuery = urlParams.get('email')
+<body>
+  <div class="container1">
+    <form id="survey-form" class="container">
+      <h1>Congratulations!</h1>
+      <p>You're now on the waitlist</p>
+      <div class="rectangle">
+          <span class="rectmunber"></span>
+          <img class="badge" src="./assets/rectangle.png" alt="badge here" />
+      </div>
+      <span>To bump up your position,</span>
+      <span>Participate in the small survey.</span>
+      <div class="form-element">
+        <button type="submit">Start Survey</button>
+      </div>
+    </form>
+  </div>
 
-      const surveyForm = document.querySelector('#survey-form')
-      if (surveyForm) {
-        surveyForm.addEventListener('submit', (e) => {
-          e.preventDefault()
-          window.location.href = `/remques.html?email=${emailQuery}`
-        })
-      }
-    </script>
-  </body>
+  <script>
+  const rectnum = document.querySelector('.rectmunber');
+  rectnum.innerHTML = '1200'
+  </script>
+  <script>
+    var urlParams = new URLSearchParams(window.location.search)
+    const emailQuery = urlParams.get('email')
+    const surveyForm = document.querySelector('#survey-form')
+    if (surveyForm) {
+      surveyForm.addEventListener('submit', (e) => {
+        e.preventDefault()
+        window.location.href = `/remques.html?email=${emailQuery}`
+      })
+    }
+  </script>
+</body>
+
 </html>
