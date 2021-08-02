@@ -41,7 +41,7 @@
 
   <script>
   const rectnum = document.querySelector('.rectmunber');
-  rectnum.innerHTML = '1200'
+  rectnum.innerHTML = localStorage.getItem('initialrank').toString();
   </script>
   <script>
     var urlParams = new URLSearchParams(window.location.search)
