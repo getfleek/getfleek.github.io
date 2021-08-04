@@ -502,15 +502,13 @@ input.addEventListener('change', function (event) {
             form.addEventListener('submit', async (e) => {
                 e.preventDefault()
                 grecaptcha.ready(function() {
-                grecaptcha.execute('6LfI89cbAAAAAH1MZGwuB9A2ehRIyi1pMRPsJA9R', {action: 'submit'}).then(function(token) {
+                var sitekey = '6LfI89cbAAAAAH1MZGwuB9A2ehRIyi1pMRPsJA9R';
+                grecaptcha.execute(sitekey, {action: 'submit'}).then(function(token) {
                 console.log("token is, ",token)
                 const nameInput = document.querySelector('#name-input').value
                 const emailInput = document.querySelector('#email-input').value
                 const telInput = document.querySelector('#tel-input').value 
-                let verificationarray={}
-                verificationarray.response = token
-                verificationarray.secret = '6LfI89cbAAAAAKk1MpLFV2yiLMCIWSZnbSvj_SJX'
-                console.log(verificationarray)
+               
                 const data = {
                     'name': nameInput,
                     'email': emailInput,
@@ -522,7 +520,8 @@ input.addEventListener('change', function (event) {
                 var myHeaders = new Headers();
                 myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
                 var urlencoded = new URLSearchParams();
-                urlencoded.append("secret", "6LfI89cbAAAAAKk1MpLFV2yiLMCIWSZnbSvj_SJX");
+                var secret="6LfI89cbAAAAAKk1MpLFV2yiLMCIWSZnbSvj_SJX";
+                urlencoded.append("secret", secret);
                 urlencoded.append("response", token);
                 var requestOptions = {
                 method: 'POST',
@@ -535,6 +534,7 @@ input.addEventListener('change', function (event) {
                 .then(result => {
                     console.log(result)
                     if(result.success){
+                        console.log('it is a success')
                 fetch(api, {
                     headers: {
                         'Accept': 'application/json',
@@ -564,10 +564,6 @@ input.addEventListener('change', function (event) {
                     }
                 })
                 .catch(error => console.log('error', error))
-               
-                
-                    
-
                 });
                 });
             
