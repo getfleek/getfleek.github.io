@@ -501,27 +501,40 @@ input.addEventListener('change', function (event) {
             
             form.addEventListener('submit', async (e) => {
                 e.preventDefault()
-
                 grecaptcha.ready(function() {
                 grecaptcha.execute('6LfI89cbAAAAAH1MZGwuB9A2ehRIyi1pMRPsJA9R', {action: 'submit'}).then(function(token) {
-                // Add your logic to submit to your backend server here.
                 console.log("token is, ",token)
-                // console.log('parsed value is,', JSON.parse(token))
                 const nameInput = document.querySelector('#name-input').value
                 const emailInput = document.querySelector('#email-input').value
-                const telInput = document.querySelector('#tel-input').value
-                const array=[]
-                array.response = token
-                array.secret = '6LfI89cbAAAAAKk1MpLFV2yiLMCIWSZnbSvj_SJX'
-                console.log(JSON.parse(array))
+                const telInput = document.querySelector('#tel-input').value 
+                let verificationarray={}
+                verificationarray.response = token
+                verificationarray.secret = '6LfI89cbAAAAAKk1MpLFV2yiLMCIWSZnbSvj_SJX'
+                console.log(verificationarray)
                 const data = {
                     'name': nameInput,
                     'email': emailInput,
                     'phonenumber': telInput,
-                    'g-recaptcha-response':array
                 }
                 console.log(JSON.stringify(data))
                 const api = 'https://api-dev.getfleek.app/join/add-user/'
+                const googleapi='https://www.google.com/recaptcha/api/siteverify'
+                var myHeaders = new Headers();
+                myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+                var urlencoded = new URLSearchParams();
+                urlencoded.append("secret", "6LfI89cbAAAAAKk1MpLFV2yiLMCIWSZnbSvj_SJX");
+                urlencoded.append("response", token);
+                var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                body: urlencoded,
+                // redirect: 'follow'
+                };
+                fetch("https://www.google.com/recaptcha/api/siteverify", requestOptions)
+                .then(response => response.json())
+                .then(result => {
+                    console.log(result)
+                    if(result.success){
                 fetch(api, {
                     headers: {
                         'Accept': 'application/json',
@@ -529,8 +542,8 @@ input.addEventListener('change', function (event) {
                     },
                     method: "POST",
                     body: JSON.stringify(data)
-                }).then(async function (response)  {
-                        formattedresponse= await response.json()
+                    }).then( function (response)  {
+                        formattedresponse= response.json()
                         console.log("place in queue is, ",formattedresponse.place_in_queue)
                         localStorage.setItem("initialrank",formattedresponse.place_in_queue.toString())
                         console.log(localStorage.getItem("initialrank").toString(),"dsfsdone")
@@ -545,6 +558,14 @@ input.addEventListener('change', function (event) {
                         console.log(data)
                         window.open(`/congo.html?email=${data.email}`, '_self')
                     })
+                    }
+                    else{
+                        console.log('you are a robot')
+                    }
+                })
+                .catch(error => console.log('error', error))
+               
+                
                     
 
                 });
