@@ -14,7 +14,6 @@
 @font-face {
 	font-family: "MediumFont";
 	src: url("../../assets/fonts/Gilroy-Medium.woff") format("woff");
-	font-weight: 300;
 }
 
 
@@ -166,15 +165,16 @@ input{
     color: rgba(255, 255, 255, 0.911);
     border: 2px solid #626263;
     transition: border .6s ease-in;
-	font-family: "MediumFont", sans-serif;
+	font-family: "LightFont", sans-serif;
 }
 .popup .form .form-element input[type="text"],
 .popup .form .form-element input[type="email"],
 .popup .form .form-element input[type="tel"]
 {
+	font-weight: 0;
     margin-top: 20px;
 	font-size: 26px;
-	font-family: "MediumFont", sans-serif;
+	font-family: "LightFont", sans-serif;
     display: block;
     width: 100%;
     outline: none;
