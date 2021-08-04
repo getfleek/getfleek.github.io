@@ -511,6 +511,10 @@ input.addEventListener('change', function (event) {
                 const googleapi='https://www.google.com/recaptcha/api/siteverify'
                 var myHeaders = new Headers();
                 myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+                myHeaders.append("Access-Control-Allow-Origin","*")
+                myHeaders.append("Access-Control-Allow-Methods","GET, POST, PATCH, PUT, DELETE, OPTIONS")
+                myHeaders.append("Access-Control-Allow-Headers","Origin, Content-Type, X-Auth-Token")
+
                 var urlencoded = new URLSearchParams();
                 var secret="6LcQGNUbAAAAAOqgkn8gh6U9Bknn-gSe9JGZTDV5";
                 urlencoded.append("secret", secret);
