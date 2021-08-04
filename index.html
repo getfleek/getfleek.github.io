@@ -114,16 +114,17 @@
 
                         <div class="form-element">
                             <!-- <label for="Name">Name</label> -->
-                            <input name="name" id="name-input" type="text" placeholder="Name" required >
+                            <input name="name" id="name-input" type="text" placeholder="Name" required>
                         </div>
                         <div class="form-element">
                             <!-- <label for="Name">E-Mail</label> -->
-                            <input name="email" id="email-input" type="text" placeholder="E-mail" required >
+                            <input name="email" id="email-input" type="text" placeholder="E-mail" required>
                         </div>
-                       
+
                         <div class="form-element">
                             <!-- <label for="Name">Phone Number</label> -->
-                            <input name="telephone" id="tel-input" type="tel" pattern="^\d{10}$" placeholder="Phone Number">
+                            <input name="telephone" id="tel-input" type="tel" pattern="^\d{10}$"
+                                placeholder="Phone Number">
                         </div>
                         <div class="form-element">
                             <button type="submit">Submit</button>
@@ -364,16 +365,16 @@
     <script>
         const input = document.querySelector('input[name="telephone"]');
 
-    input.addEventListener('invalid', function (event) {
-  if (event.target) {
-    event.target.setCustomValidity('Please enter the 10 digit phone number.');
-  }
-  
-})
+        input.addEventListener('invalid', function (event) {
+            if (event.target) {
+                event.target.setCustomValidity('Please enter the 10 digit phone number.');
+            }
 
-input.addEventListener('change', function (event) {
-  event.target.setCustomValidity('');
-})
+        })
+
+        input.addEventListener('change', function (event) {
+            event.target.setCustomValidity('');
+        })
     </script>
 
     <script>
@@ -491,84 +492,55 @@ input.addEventListener('change', function (event) {
 
         });
     </script>
-<script src="https://www.google.com/recaptcha/api.js?render=6LcQGNUbAAAAALfMnM-uwPMNe-wJmok7qrZYzGbc"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LcQGNUbAAAAALfMnM-uwPMNe-wJmok7qrZYzGbc"></script>
     <script>
         const form = document.querySelector('#popform')
-        var gresponse = 'notyet'; 
+        var gresponse = 'notyet';
         if (form) {
-            
+
             form.addEventListener('submit', async (e) => {
                 e.preventDefault()
-                grecaptcha.ready(function() {
-                var sitekey = '6LcQGNUbAAAAALfMnM-uwPMNe-wJmok7qrZYzGbc';
-                grecaptcha.execute(sitekey, {action: 'submit'}).then(function(token) {
-                console.log("token is, ",token)
-                const nameInput = document.querySelector('#name-input').value
-                const emailInput = document.querySelector('#email-input').value
-                const telInput = document.querySelector('#tel-input').value 
-               
-               
-                const googleapi='https://www.google.com/recaptcha/api/siteverify'
-                var myHeaders = new Headers();
-                myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
-                var urlencoded = new URLSearchParams();
-                var secret="6LcQGNUbAAAAAOqgkn8gh6U9Bknn-gSe9JGZTDV5";
-                urlencoded.append("secret", secret);
-                urlencoded.append("response", token);
-                var requestOptions = {
-                method: 'POST',
-                headers: myHeaders,
-                body: urlencoded,
-                };
-                fetch("https://www.google.com/recaptcha/api/siteverify", requestOptions)
-                .then(response => response.json())
-                .then(result => {
-                    console.log(result)
-                    if(result.success){
-                        console.log('it is a success')
-                const data = {
-                    name: nameInput,
-                    email: emailInput,
-                    phonenumber: telInput,
-                }
-                console.log(JSON.stringify(data))
-                var myHeaders2 = new Headers();
-                myHeaders2.append("Content-Type", "application/json");
-                
-                var requestOptions2 = {
-                    method: 'POST',
-                    headers: myHeaders2,
-                    body: JSON.stringify(data),
-                    redirect: 'follow'
-                    };
-                const api = 'https://api-dev.getfleek.app/join/add-user/'
+                grecaptcha.ready(function () {
+                    var sitekey = '6LcQGNUbAAAAALfMnM-uwPMNe-wJmok7qrZYzGbc';
+                    grecaptcha.execute(sitekey, { action: 'submit' }).then(function (token) {
+                        const nameInput = document.querySelector('#name-input').value
+                        const emailInput = document.querySelector('#email-input').value
+                        const telInput = document.querySelector('#tel-input').value
+                        const data = {
+                            "name": nameInput,
+                            "email": emailInput,
+                            "phonenumber": telInput,
+                            "g-recaptcha-response": token
+                        }
+                        var myHeaders2 = new Headers();
+                        myHeaders2.append("Content-Type", "application/json");
 
-                fetch(api,requestOptions2).then( function (response)  {
-                        formattedresponse= response.json()
-                        console.log("place in queue is, ",formattedresponse.place_in_queue)
-                        localStorage.setItem("initialrank",formattedresponse.place_in_queue.toString())
-                        console.log(localStorage.getItem("initialrank").toString(),"dsfsdone")
+                        var requestOptions2 = {
+                            method: 'POST',
+                            headers: myHeaders2,
+                            body: JSON.stringify(data),
+                            redirect: 'follow'
+                        };
+                        const api = 'https://api-dev.getfleek.app/join/add-user/'
+
+                        fetch(api, requestOptions2).then(async function (response) {
+                            formattedresponse = await response.json()
+                            localStorage.setItem("initialrank", formattedresponse.place_in_queue.toString())
+                        })
+                            .then(() => {
+                                window.open(`/congo.html?email=${data.email}`, '_self')
+                            })
+                            .catch((e) => {
+                                console.log(e)
+                                window.open(`/congo.html?email=${data.email}`, '_self')
+                            })
+
                     })
-                    .then((d) => {
-                        console.log(d.json(),"dsaas")
-                        console.log(data)
-                        window.open(`/congo.html?email=${data.email}`, '_self')
-                    })
-                    .catch((e) => {
-                        console.log(e)
-                        console.log(data)
-                        window.open(`/congo.html?email=${data.email}`, '_self')
-                    })
-                    }
-                    else{
-                        console.log('you are a robot')
-                    }
-                })
-                .catch(error => console.log('error', error))
+                        .catch(error => console.log('error', error))
                 });
-                });
-            
-                })
+            });
+
+
         }
     </script>
 </body>
