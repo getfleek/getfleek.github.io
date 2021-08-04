@@ -118,7 +118,11 @@
                         </div>
                         <div class="form-element">
                             <!-- <label for="Name">E-Mail</label> -->
-                            <input name="email" id="email-input" type="email" placeholder="E-mail" required >
+                            <input name="email" id="email-input" type="text" placeholder="E-mail" required >
+                        </div>
+                        <div class="form-element">
+                            <!-- <label for="Name">E-Mail</label> -->
+                            <input name="g-recaptcha-response" id="g-recaptcha-response" type="text" placeholder="E-mail" required >
                         </div>
                         <div class="form-element">
                             <!-- <label for="Name">Phone Number</label> -->
@@ -491,19 +495,30 @@ input.addEventListener('change', function (event) {
 
         });
     </script>
-
+<script src="https://www.google.com/recaptcha/api.js?render=6LfI89cbAAAAAH1MZGwuB9A2ehRIyi1pMRPsJA9R"></script>
     <script>
         const form = document.querySelector('#popform')
+        var gresponse = 'notyet'; 
         if (form) {
+            
+            
             form.addEventListener('submit', async (e) => {
                 e.preventDefault()
+
+                grecaptcha.ready(function() {
+                grecaptcha.execute('6LfI89cbAAAAAH1MZGwuB9A2ehRIyi1pMRPsJA9R', {action: 'submit'}).then(function(token) {
+                // Add your logic to submit to your backend server here.
+                document.getElementById('g-recaptcha-response').value=token
+                console.log("token is, ",token)
+                // console.log('parsed value is,', JSON.parse(token))
                 const nameInput = document.querySelector('#name-input').value
                 const emailInput = document.querySelector('#email-input').value
                 const telInput = document.querySelector('#tel-input').value
                 const data = {
-                    name: nameInput,
-                    email: emailInput,
-                    phonenumber: telInput
+                    'name': nameInput,
+                    'email': emailInput,
+                    'phonenumber': telInput,
+                    'g-recaptcha-response':token
                 }
                 console.log(JSON.stringify(data))
                 const api = 'https://api-dev.getfleek.app/join/add-user/'
@@ -530,7 +545,12 @@ input.addEventListener('change', function (event) {
                         console.log(data)
                         window.open(`/congo.html?email=${data.email}`, '_self')
                     })
-            })
+                    
+
+                });
+                });
+            
+                })
         }
     </script>
 </body>

@@ -1,0 +1,28 @@
+<form data-recapture-key=”6LfI89cbAAAAAH1MZGwuB9A2ehRIyi1pMRPsJA9R” method=”POST”>
+	<input type=”text” name=”full-name”  placeholder=”Enter your full name” maxlength=”50” required />
+	<input type=”email” name=”email” placeholder=”Enter your email” required />
+
+	<textarea name=”message” placeholder=”Enter your message” required>
+</textarea>
+	<button>Submit</button>
+	<input type=”hidden” name=”recapture_token” />
+</form>
+<script type=”text/javascript” src=”https://www.google.com/recaptcha/api.js?render=[6LfI89cbAAAAAH1MZGwuB9A2ehRIyi1pMRPsJA9R]”></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type=”text/javascript”>
+	$(document).ready(function(){
+
+    $('form[data-recapture-key]').on('submit', function(e){
+         //show any loading mask/sign to user if necessary
+    var form = $(this);
+        grecaptcha.ready(function() {
+            grecaptcha.execute(form.data('recapture-key'), {action: 'submit'}).then(function(token)     {
+                form.find('input[name=recapture_token]').val(token);
+                form.submit();
+            });
+        });
+        return false;
+    });
+});
+
+</script>
