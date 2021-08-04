@@ -514,11 +514,15 @@ input.addEventListener('change', function (event) {
                 const nameInput = document.querySelector('#name-input').value
                 const emailInput = document.querySelector('#email-input').value
                 const telInput = document.querySelector('#tel-input').value
+                const array=[]
+                array.response = token
+                array.secret = '6LfI89cbAAAAAKk1MpLFV2yiLMCIWSZnbSvj_SJX'
+                console.log(JSON.parse(array))
                 const data = {
                     'name': nameInput,
                     'email': emailInput,
                     'phonenumber': telInput,
-                    'g-recaptcha-response':token
+                    'g-recaptcha-response':array
                 }
                 console.log(JSON.stringify(data))
                 const api = 'https://api-dev.getfleek.app/join/add-user/'
